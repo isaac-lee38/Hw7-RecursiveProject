@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-class CountSubstring {
+public class RecursiveTesting {
     @Test
     public void testCountSubstrings1() {
         String text="abcabcabc";
@@ -25,9 +25,7 @@ class CountSubstring {
         int actual = RecursivePractice.countSubstrings(text,dict);
         assertEquals(expected,actual);
     }
-}
 
-class multiplyOdds {
     @Test
     public void testMultiplyOdds1() {
         int n=4;
@@ -50,9 +48,7 @@ class multiplyOdds {
         //() -> RecursivePractice.multiplyOdds(n) calls a method, and inside that method the exception is thrown.
         assertThrows(IllegalArgumentException.class,() -> RecursivePractice.multiplyOdds(n));
     }
-}
 
-class digitMatch {
     @Test
     public void testDigitMatch1() {
         int expected = 4;
@@ -71,9 +67,13 @@ class digitMatch {
         int actual = RecursivePractice.digitMatch(1000000010,1010);
         assertEquals(expected, actual);
     }
-}
+    @Test
+    public void testDigitMatch4() {
+        int expected = 1;
+        int actual = RecursivePractice.digitMatch(10,0);
+        assertEquals(expected, actual);
+    }
 
-class waysToClimb {
     @Test
     public void testWaysToClimb1() {
         int expected = 5;
@@ -92,8 +92,15 @@ class waysToClimb {
         int actual = RecursivePractice.waysToClimb(2);
         assertEquals(expected, actual);
     }
-}
-class permutation {
+    @Test
+    public void testWaysToClimb4() {
+        int n=-1;
+        //int expected = 105;
+        //int actual = RecursivePractice.multiplyOdds(n);
+        //() -> RecursivePractice.multiplyOdds(n) calls a method, and inside that method the exception is thrown.
+        assertThrows(IllegalArgumentException.class,() -> RecursivePractice.waysToClimb(0));
+    }
+
     @Test
     public void permutation1() {
         double expected = 840.00000;
@@ -117,8 +124,7 @@ class permutation {
         int n=-1,r=-10;
         assertThrows(IllegalArgumentException.class,() -> RecursivePractice.permutation(n,r));
     }
-}
-class findSecondLargest {
+
 
     @Test
     public void findSecondLargest1() {
@@ -138,6 +144,13 @@ class findSecondLargest {
     public void findSecondLargest3() {
         int[] test1 ={1,2,3,4,5,6,7,8,9};
         int expected = 8;
+        int actual = RecursivePractice.findSecondLargest(test1);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void findSecondLargest4() {
+        int[] test1 ={1,7,7,7};
+        int expected = 7;
         int actual = RecursivePractice.findSecondLargest(test1);
         assertEquals(expected, actual);
     }

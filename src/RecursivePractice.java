@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 public class RecursivePractice {
 
@@ -34,8 +33,8 @@ public class RecursivePractice {
     }
 
     private static int digitMatchHelper (int a, int b){
-        if (a==0 || b==0){
-            return 0;
+        if (a < 10 || b < 10) {
+            return (a % 10 == b % 10) ? 1 : 0;
         }
         int res=0;
         if (a%10 == b%10){
@@ -45,7 +44,7 @@ public class RecursivePractice {
     }
 
     public static int waysToClimb(int n){
-        if (n<0) throw new IllegalArgumentException("n must be >= 0");
+        if (n<=0) throw new IllegalArgumentException("n must be >= 0");
         int[] memo= new int[n+1];
         Arrays.fill(memo, -1);
         return waysToClimbHelper(n,memo);
@@ -73,18 +72,24 @@ public class RecursivePractice {
     }
 
     public static int findSecondLargest(int[] arr){
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
-        //Priority Queue is default min heap, flip the sign and flip back
-        for (int num:arr){
-            heap.add(-num);
-        }
-        return findSecondLargestHelper(heap,1,2);
+        return findSecondLargestHelper(arr, 0, Integer.MIN_VALUE, Integer.MIN_VALUE);
     }
 
-    private static int findSecondLargestHelper(PriorityQueue<Integer> heap, int cur, int limit){
-        if (cur==limit) return -heap.poll();
-        heap.poll();
-        return findSecondLargestHelper(heap,cur+1,limit);
+    private static int findSecondLargestHelper(int[] arr, int index, int largest, int secondLargest) {
+        if (index == arr.length) {
+            return secondLargest;
+        }
+
+        int current = arr[index];
+
+        if (current >= largest) {
+            secondLargest = largest;
+            largest = current;
+        } else if (current > secondLargest) {
+            secondLargest = current;
+        }
+
+        return findSecondLargestHelper(arr, index + 1, largest, secondLargest);
     }
 
     public static void main(String[] args) {

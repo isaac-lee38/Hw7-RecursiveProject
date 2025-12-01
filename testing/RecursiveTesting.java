@@ -72,3 +72,72 @@ class digitMatch {
         assertEquals(expected, actual);
     }
 }
+
+class waysToClimb {
+    @Test
+    public void testWaysToClimb1() {
+        int expected = 5;
+        int actual = RecursivePractice.waysToClimb(4);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testWaysToClimb2() {
+        int expected = 1;
+        int actual = RecursivePractice.waysToClimb(1);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testWaysToClimb3() {
+        int expected = 2;
+        int actual = RecursivePractice.waysToClimb(2);
+        assertEquals(expected, actual);
+    }
+}
+class permutation {
+    @Test
+    public void permutation1() {
+        double expected = 840.00000;
+        double actual = RecursivePractice.permutation(7,4);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void permutation2() {
+        double expected = 20.00000;
+        double actual = RecursivePractice.permutation(5,2);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void permutation3() {
+        double expected = 1.00000;
+        double actual = RecursivePractice.permutation(7,0);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void permutation4() {
+        int n=-1,r=-10;
+        assertThrows(IllegalArgumentException.class,() -> RecursivePractice.permutation(n,r));
+    }
+}
+class findSecondLargest {
+    @Test
+    public void findSecondLargest1() {
+        int[] test1 ={7, 1, 7};
+        int expected = 7;
+        int actual = RecursivePractice.findSecondLargest(test1);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void findSecondLargest2() {
+        int[] test1 ={2,5,8,9,10};
+        int expected = 9;
+        int actual = RecursivePractice.findSecondLargest(test1);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void findSecondLargest3() {
+        int[] test1 ={1,2,3,4,5,6,7,8,9};
+        int expected = 8;
+        int actual = RecursivePractice.findSecondLargest(test1);
+        assertEquals(expected, actual);
+    }
+}

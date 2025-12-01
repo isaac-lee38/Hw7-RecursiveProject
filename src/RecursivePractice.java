@@ -26,9 +26,24 @@ public class RecursivePractice {
         return multiplyOddsHelper(product,cur+1,limit);
     }
 
+    public static int digitMatch(int x, int y){
+        return digitMatchHelper(x,y);
+    }
+
+    private static int digitMatchHelper (int a, int b){
+        if (a==0 || b==0){
+            return 0;
+        }
+        int res=0;
+        if (a%10 == b%10){
+            res=1;
+        }
+        return res + digitMatchHelper(a/10,b/10);
+    }
 
     public static void main(String[] args) {
         System.out.printf("%d\n", countSubstrings("abcabcabc","abc"));
         System.out.printf("%d\n", multiplyOdds(10));
+        System.out.printf("%d\n", digitMatch(1072503891, 62530841));
     }
 }

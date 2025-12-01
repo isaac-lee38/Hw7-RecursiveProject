@@ -51,3 +51,24 @@ class multiplyOdds {
         assertThrows(IllegalArgumentException.class,() -> RecursivePractice.multiplyOdds(n));
     }
 }
+
+class digitMatch {
+    @Test
+    public void testDigitMatch1() {
+        int expected = 4;
+        int actual = RecursivePractice.digitMatch(1072503891,62530841);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testDigitMatch2() {
+        int expected = 2;
+        int actual = RecursivePractice.digitMatch(110,10);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testDigitMatch3() {
+        int expected = 3;
+        int actual = RecursivePractice.digitMatch(1000000010,1010);
+        assertEquals(expected, actual);
+    }
+}

@@ -11,5 +11,7 @@ public class RecursivePractice {
         }
         return exist + countSubstrings(word.substring(1),substring);
     }
-
+    public static void main(String[] args) {
+        System.out.printf("%d", countSubstrings("abcabcabc","abc"));
+    }
 }

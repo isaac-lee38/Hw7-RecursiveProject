@@ -92,7 +92,7 @@ public class RecursivePractice {
         return findSecondLargestHelper(arr, index + 1, largest, secondLargest);
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.printf("%d\n", countSubstrings("abcabcabc","abc"));
         System.out.printf("%d\n", multiplyOdds(10));
         System.out.printf("%d\n", digitMatch(1072503891, 62530841));
@@ -100,5 +100,5 @@ public class RecursivePractice {
         System.out.printf("%d\n", findSecondLargest(arr));
         System.out.printf("%f\n", permutation(7, 4));
         System.out.printf("%d\n", waysToClimb(4));
-    }
+    }*/
 }
